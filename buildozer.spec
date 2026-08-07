@@ -21,7 +21,7 @@ android.permissions = INTERNET,ACCESS_NETWORK_STATE,WAKE_LOCK
 
 # Android API/NDK seviyeleri — buildozer varsayılanlarıyla uyumlu, güncel
 android.api = 34
-android.minapi = 23
+android.minapi = 24
 android.ndk = 25b
 android.accept_sdk_license = True
 
