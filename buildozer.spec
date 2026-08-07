@@ -10,7 +10,7 @@ version = 1.0
 
 # pandas KASITLI OLARAK YOK — Android derlemesinde en sık patlayan
 # bağımlılıktır. Tüm hesaplamalar numpy ile yapılıyor (main.py içinde).
-requirements = python3,kivy==2.2.1,requests,numpy==1.26.4,certifi,urllib3,idna,charset_normalizer,openssl
+requirements = python3,kivy==2.2.1,requests,numpy,certifi,urllib3,idna,charset_normalizer,openssl
 orientation = portrait
 fullscreen = 0
 
