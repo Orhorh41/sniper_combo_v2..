@@ -1,0 +1,33 @@
+name: APK Derle
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main, master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Sistem bağımlılıklarını kur
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y git zip unzip openjdk-17-jdk python3-pip autoconf libtool pkg-config \
+            zlib1g-dev libncurses5-dev cmake libffi-dev libssl-dev build-essential
+
+      - name: Python bağımlılıklarını kur
+        run: |
+          pip3 install --upgrade pip
+          pip3 install buildozer cython==0.29.36
+
+      - name: APK derle (debug)
+        run: |
+          yes | buildozer android debug
+
+      - name: APK dosyasını yükle
+        uses: actions/upload-artifact@v4
+        with:
+          name: kripto-sinyal-apk
+          path: bin/*.apk
